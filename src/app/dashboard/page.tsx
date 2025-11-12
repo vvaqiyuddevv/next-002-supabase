@@ -1,7 +1,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { getPosts } from '../action/post'
-import PostList from './PostList'
+import PostList from '../dashboard/PostList'
 import { signOut } from '../action/auth'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'

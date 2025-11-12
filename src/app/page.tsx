@@ -8,6 +8,7 @@ import {
   InputGroupTextarea,
 } from "@/components/ui/input-group"
 import { Button } from "@/components/ui/button";
+import { ArrowUpRight, SearchIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -23,29 +24,26 @@ export default function Home() {
         />
 
         <div className="">
-          // Small
           <Button size="sm" variant="outline">Small</Button>
           <Button size="icon-sm" aria-label="Submit" variant="outline">
-            {/* <ArrowUpRightIcon /> */}
+            <ArrowUpRight />
           </Button>
 
-          // Medium
           <Button variant="outline">Default</Button>
           <Button size="icon" aria-label="Submit" variant="outline">
-            {/* <ArrowUpRightIcon /> */}
+            <ArrowUpRight />
           </Button>
 
-          // Large
           <Button size="lg" variant="outline">Large</Button>
           <Button size="icon-lg" aria-label="Submit" variant="outline">
-            {/* <ArrowUpRightIcon /> */}
+            <ArrowUpRight />
           </Button>
         </div>
 
         <InputGroup>
           <InputGroupInput placeholder="Search..." />
           <InputGroupAddon>
-            {/* <SearchIcon /> */}
+            <SearchIcon />
           </InputGroupAddon>
           <InputGroupAddon align="inline-end">
             <InputGroupButton>Search</InputGroupButton>

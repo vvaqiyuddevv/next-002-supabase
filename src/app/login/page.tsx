@@ -28,26 +28,28 @@ export default function LoginPage() {
       }
     } catch (err: any) {
       setError(err.message)
+    } finally {
       setLoading(false)
     }
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
-            {isSignUp ? 'Create an account' : 'Welcome back'}
+      <Card className="w-full max-w-md shadow-lg">
+        <CardHeader className="text-center space-y-1 pb-2 border-b border-slate-200">
+          <CardTitle className="text-2xl font-semibold">
+            {isSignUp ? 'Create an Account' : 'Welcome Back'}
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-sm text-slate-500">
             {isSignUp 
               ? 'Enter your details to create your account' 
               : 'Enter your credentials to access your account'}
           </CardDescription>
         </CardHeader>
-        <CardContent>
+
+        <CardContent className="pt-4">
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
+            <div className="flex flex-col gap-1">
               <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
@@ -59,8 +61,8 @@ export default function LoginPage() {
                 disabled={loading}
               />
             </div>
-            
-            <div className="space-y-2">
+
+            <div className="flex flex-col gap-1">
               <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
@@ -72,24 +74,24 @@ export default function LoginPage() {
                 disabled={loading}
               />
             </div>
-            
+
             {error && (
-              <Alert variant="destructive">
+              <Alert variant="destructive" className="mt-1">
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-            
-            <Button type="submit" className="w-full" disabled={loading}>
+
+            <Button type="submit" className="w-full mt-2" disabled={loading}>
               {loading ? 'Loading...' : isSignUp ? 'Sign Up' : 'Sign In'}
             </Button>
           </form>
-          
-          <div className="mt-4 text-center text-sm">
+
+          <div className="mt-4 text-center text-sm grid gap-2">
             <Button
               variant="link"
               onClick={() => setIsSignUp(!isSignUp)}
               disabled={loading}
-              className="text-muted-foreground"
+              className="text-slate-500 hover:text-slate-700"
             >
               {isSignUp 
                 ? 'Already have an account? Sign In' 

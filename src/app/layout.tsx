@@ -26,10 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
+        {/* Navbar with theme toggle */}
         <Navbar />
-        {children}
+
+        {/* Page Content */}
+        <main className="min-h-screen bg-zinc-50 dark:bg-black transition-colors duration-300">
+          {children}
+        </main>
       </body>
     </html>
   );
